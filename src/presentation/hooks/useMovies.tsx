@@ -5,7 +5,7 @@ import * as UseCases from '../../core/use-cases';
 import {movieDBFetcher} from '../../config/adapters/movieDB.adapter';
 
 export const useMovies = () => {
-  const [nowPlayinh, setnowPlayinh] = useState<Movie[]>([]);
+  const [nowPlaying, setnowPlaying] = useState<Movie[]>([]);
   const [isLoading, setisLoading] = useState(true);
 
   useEffect(() => {
@@ -18,5 +18,8 @@ export const useMovies = () => {
     );
   };
 
-  return {};
+  return {
+    isLoading,
+    nowPlaying,
+  };
 };
