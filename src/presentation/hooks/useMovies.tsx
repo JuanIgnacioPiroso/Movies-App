@@ -43,8 +43,6 @@ export const useMovies = () => {
     setisLoading(false);
 
 
-    console.log({nowPlayingMovies, popularMovies, topRatedMovies, upcomingMovies
-    })
   };
 
   return {

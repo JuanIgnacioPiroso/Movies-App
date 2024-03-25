@@ -6,12 +6,12 @@ import {PosterCarousel} from '../../components/movies/PosterCarousel';
 import {HorizontalCarousel} from '../../components/movies/HorizontalCarousel';
 
 export const HomeScreen = () => {
-  const {isLoading, nowPlaying, popular} = useMovies();
+  const {isLoading, nowPlaying, popular, topRated, upcoming} = useMovies();
+  const {top} = useSafeAreaInsets();
 
   if (isLoading) {
     return <Text>Cargando...</Text>;
   }
-  const {top} = useSafeAreaInsets();
   return (
     <ScrollView>
       <View style={{marginTop: top + 20, paddingBottom: 30}}>
@@ -19,7 +19,17 @@ export const HomeScreen = () => {
         <PosterCarousel movies={nowPlaying} />
 
         {/* Populares */}
-        <HorizontalCarousel movies={popular} title="Populares" />
+        <HorizontalCarousel
+          movies={popular}
+          title="Populares"
+          loadNextPage={() => console.log('Fin alcanzado')}
+        />
+
+        {/* Top rated */}
+        <HorizontalCarousel movies={topRated} title="Mejor calificadas" />
+
+        {/* Proximamente */}
+        <HorizontalCarousel movies={upcoming} title="Proximamente" />
       </View>
     </ScrollView>
   );
