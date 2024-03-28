@@ -21,6 +21,8 @@ export const useMovie = (movieID: number) => {
     );
     setMovie(fullMovie);
     setIsLoading(false);
+
+    console.log({fullMovie});
   };
 
   return {
