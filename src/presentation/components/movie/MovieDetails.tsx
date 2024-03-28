@@ -26,6 +26,20 @@ export const MovieDetails = ({movie}: Props) => {
 
         <Text style={{fontSize: 18}}>{Formatter.currency(movie.budget)}</Text>
       </View>
+
+      {/* Casting */}
+
+      <View style={{marginTop: 10, marginBottom: 100}}>
+        <Text
+          style={{
+            fontSize: 23,
+            marginVertical: 10,
+            fontWeight: 'bold',
+            marginHorizontal: 20,
+          }}>
+          Actores
+        </Text>
+      </View>
     </>
   );
 };

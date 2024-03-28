@@ -22,8 +22,9 @@ export const DetailsScreen = ({route}: Props) => {
         originalTitle={movie!.originalTitle}
         title={movie!.title}
         poster={movie!.poster}
-      />
+      />  
 
+      {/* Detalles */}
       <MovieDetails movie={movie!} />
     </ScrollView>
   );
