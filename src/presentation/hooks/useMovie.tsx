@@ -40,5 +40,6 @@ export const useMovie = (movieID: number) => {
   return {
     isLoading,
     movie,
+    cast,
   };
 };
